@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<!-- jQuery = shortened syntax that point to pre-written JavaScript code -->
+<script>
+    // $ = "jQuery"; which is used to target DOM objects
+    // $(document) = requesting from the DOM (entire HTML page)
+$(document).ready (function () { //when the document is ready do this function
+    //as the document is loading request the html tag and "append"; insert specified content inside the html tag
+    $("html").append (
+        "<body>\
+            <div id= 'container'>\
+                <div id = 'inner'>\
+                    <h1>Basic jQuery</h1>\
+                    <p id='1'>Paragraph 1</p>\
+                    <p id='2'>Paragraph 2</p>\
+                    <p id='3'>Paragraph 3</p>\
+                </div>\
+            </div>\
+        </body>"        
+// "\" tells that the string will be continued on the next line in JavaScript
+// can't do a ("") because it would tell the string to end
+    );
+    // target paragraph 1; clicking on paragraph 1 will pop up the "string" message
+    $("#1").click(function() {
+        console.log ("Let's get ready to read!");
+    });
+    // target is paragraph with id='2', action to change css font color
+    //"property"=color and "attribute"=red
+    $("#2").css({"color":"red"});
+    // target paragraph 3, action/event = click on paragraph 3 and "h1" header to disappear
+    $("#3").click(function() { //function tells jQuery what to do
+        $('h1').hide(); //targets the h1 element and tells it too hide 
+        $('p').slideUp(800); //Hides all paragraphs using a slide up animation over 0.8 seconds
+    });
+
+})
+
+
+</script>
+</html>
